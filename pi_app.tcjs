@@ -1,0 +1,31 @@
+let tc = TCF.define(TCF.CPP_TRANSFORM);
+tc.sources = [
+    'platform:/resource/IoTFireDetection/FireDetectionSystem.emx#_rXlEsKBKEeiFtNCQSFa-8A'
+];
+tc.targetProject = '/IoTFireDetection_pitarget';
+tc.compilationMakeCommand = 'make';
+tc.compilationMakeType = MakeType.GNU_make;
+tc.compileArguments = '$(DEBUG_TAG) -L/openssl -fpermissive';
+tc.targetConfiguration = 'RPI9T.ARM-g++-4.9.2';
+tc.targetServicesLibrary = 'D:\\rsarte\\TargetRTS\\Raspberry-TargetRTS\\TargetRTS';
+tc.topCapsule = 'platform:/resource/IoTFireDetection/FireDetectionSystem.emx#_aWzugKBOEeiFtNCQSFa-8A';
+tc.libraries = [
+    'jwt',
+    'crypto',
+    'ssl',
+    'paho-mqtt3cs'
+];
+tc.linkArguments = '-L/openssl';
+tc.inclusionPaths = [
+    'D:\\rsarte\\TargetRTS\\Raspberry-TargetRTS\\TargetRTS\\src\\target\\RPI9',
+    'D:\\paho-mqtt\\src',
+    'D:\\libjwt\\include',
+    'D:\\openssl\\include',
+    'D:\\jansson\\include'
+];
+tc.userLibraries = [
+    '-ljwt',
+    '-lcrypto',
+    '-lssl',
+    '-lpaho-mqtt3cs'
+];
