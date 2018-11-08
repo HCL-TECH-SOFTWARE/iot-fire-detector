@@ -16,7 +16,7 @@ Before you can run this application you must set-up a Google IoT account. The na
 * Go to the Pub/Sub web page in Google Cloud Platform and create a subscription for the DemoTopic. It should be called "web-sub" so its full name becomes "projects/rsarte-iot/subscriptions/web-sub". The web application uses this subscription to fetch MQTT messages sent by the application.
 * Go back to the device registry page in the IoT Core web page in Google Could Platform. Create a device with the id "rtist_demo_device".
 * Go to the web page for editing the device you just created. Upload a public key for the device. It is recommended to use a key on the format ES256_X509. Follow the instructions on [this page](https://cloud.google.com/iot/docs/how-tos/credentials/keys) to generate the public key and its corresponding private key. The IoT application will use the private key for authenticating with Google IoT so keep it safe.
-* Go to the Service Account page under IAM & admin in Google Cloud Platform. Create a service account for the project "RSARTE-IoT". Generate a key for the service account and download it (a JSON file). The web application will use this key to authenticate with Google IoT so keep it safe.
+* Go to the Service Account page under IAM & admin in Google Cloud Platform. Create a service account "webapp-account" for the project "RSARTE-IoT". Create a key for the service account and download it (a JSON file). The web application will use this key to authenticate with Google IoT so keep it safe.
 
 ## Building the application for Raspberry Pi
 The TC "pi_app" is configured for building the application on Windows using the cross-compilation toolchain for Raspberry Pi. 
